@@ -1,0 +1,132 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --primary-color: #7FC1CD;
+    --secondary-color: #ECD83B;
+    --emphasis-color:#E884A8;
+    --black-color:#333;
+    --white-color:#f4f4f4;
+    --font-primary: 'Martian Mono',monospace;
+    --font-secondary: 'Georgia', serif;
+    --base-spacing: 1rem;
+    --border:5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    background-color: var(--white-color);
+    /* background-color: var(); */
+    color: var(--black-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: var(--base-spacing);
+    /* margin-bottom: var(--base-spacing); */
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: var(--base-spacing);
+}
+.primary-button{
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: var(--border);
+    color: var(--white-color);
+    width: 200px;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: .5em;
+}
+.primary-button:hover{
+    background-color: var(--emphasis-color);
+    transform: translateY(-2px);
+}
+.primary-button:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(167, 196, 228, 0.5);
+}
+.primary-button:active{
+    background-color: var(--secondary-color);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--base-spacing);
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+:focus {
+    outline: 2px dashed var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* nav */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: .5em;
+    color: var(--primary-color)
+}
+nav li,a{
+    color: var(--emphasis-color);
+    text-decoration: none;
+}
+nav li, a:hover{
+    color: var(--secondary-color);
+}
+nav li, a:active{
+    color: var(--primary-color);
+}
+/* section start */
+.welcome-paragraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* section about */
+h2{
+    color: var(--secondary-color);
+}
