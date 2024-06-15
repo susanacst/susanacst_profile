@@ -174,7 +174,7 @@ h2{
     width: 90%;
     display: grid;
     justify-items: center;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     gap: 1em;
 }
 .card-proyect{
@@ -217,7 +217,7 @@ h2{
 
 /* card ejemplo */
 .card {
-    width: 100%;
+    /* width: 100%; */
     border-radius: var(--border);
     border: 1px solid #7FC1CD;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -251,3 +251,24 @@ h2{
 
 /* termina card ejemplo */
 
+/* section contact */
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid --emphasis-color;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=submit] {
+    background-color:var(--primary-color);
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: var(--secondary-color);
+}
