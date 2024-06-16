@@ -218,14 +218,17 @@ h2{
 /* card ejemplo */
 .card {
     /* width: 100%; */
+    display: flex;
+    flex-direction: row-reverse;
     border-radius: var(--border);
-    border: 1px solid #7FC1CD;
+    border: 1px solid --primary-color;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.2s ease-in-out;
 }
 .img {
     width: 100%;
-    height: 50%;
+    /* height: 50%; */
+    padding: 1em;
     display: flex;
     align-items: top;
 }
@@ -243,6 +246,21 @@ h2{
 .text .p {
     color: var(--subtitle-color);
     font-size: 13px;
+}
+ol.tags-proyect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+ol.tags-proyect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+ol.tags-proyect li:hover{
+    box-shadow: #E884A8 0px 0px 0px 3px;
 }
 .card:hover {
     cursor: pointer;
