@@ -4,11 +4,13 @@
 
 :root {
     --primary-color: #7FC1CD;
-    --secondary-color: #ECD83B;
+    --secondary-color: #FECA0C;
     --emphasis-color:#E884A8;
+    --soft-emphasis-color:pink;
     --black-color:#333;
     --white-color:#f4f4f4;
     --subtitle-color:#999999;
+    --background-section:#dff4ff;
     --font-primary: 'Martian Mono',monospace;
     --font-secondary: 'Georgia', serif;
     --base-spacing: 1rem;
@@ -22,7 +24,7 @@
 }
 
 html {
-    font-size: 16px;
+    font-size: medium;
 }
 
 body {
@@ -52,10 +54,10 @@ p {
 
 .primary-button{
     color: var(--black-color);
-    font-size: 16px;
+    font-size: smaller;
     font-weight: 200;
     letter-spacing: 1px;
-    padding: 13px 20px;
+    padding: 8px 12px;
     outline: 0;
     border: 1px solid var(--black-color);
     cursor: pointer;
@@ -75,8 +77,8 @@ p {
     z-index: -1;
     position: absolute;
     height: 100%;
-    top: 7px;
-    left: 7px;
+    top: 6px;
+    left: 6px;
     transition: 0.2s;
 }
 .primary-button:hover::after{
@@ -100,8 +102,10 @@ p {
     justify-content: center;
 }
 .paragraph {
-    text-align: justify;
+    text-align: center;
     margin: 1em;
+    font-size: medium;
+    width: 60%;
 }
 img {
     width: 100%;
@@ -114,7 +118,7 @@ img {
 
 @media (max-width: 768px) {
     body {
-        font-size: 0.9rem;
+        font-size: small;
     }
 
     .grid-container {
@@ -130,10 +134,9 @@ img {
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin: .5em;
     color: var(--primary-color);
-    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 }
 nav li,a{
@@ -147,13 +150,12 @@ nav li, a:active{
     color: var(--primary-color);
 }
 section {
-    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    /* margin: 1em; */
+    margin: 1em;
 }
 /* section start */
 .welcome-paragraph{
@@ -161,7 +163,19 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 2em;
+    font-size: medium;
+}
+.contact-icons{
+    font-size: 28px;
+}
+.profile-img{
+    width: 250px; 
+    height: 250px; 
+    object-fit: cover;
+}
+.profile-img img{
+    border-radius: 50%;
+
 }
 /* section about */
 h2{
@@ -171,32 +185,24 @@ h2{
 #proyects{
     
 }
-.card-proyect-container{
-    width: 90%;
-    display: grid;
-    justify-items: center;
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 1em;
-}
+
 /*cards*/
 .card {
-    display: flex;
-    /* flex-direction: row-reverse; */
     border-radius: var(--border);
     border: 1px solid --primary-color;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: 0.2s ease-in-out;
+    width: 310px;
 } 
-.right{
-    flex-direction: row-reverse;
-}
+
 .card .title-card{
 font-weight: 700;
     color: var(--primary-color);
     background-color: var(--primary-color);
 }
-.card .tags-proyect{
+.card .buttons-proyect-container{
     color: var(--primary-color);
+    font-size: 25px;
 }
 .card:hover{
     transform: scale(1.05);
@@ -210,32 +216,26 @@ font-weight: 700;
     align-items: top;
 }
 .text {
-    margin: 20px;
+    margin: 1em;
     display: flex;
     flex-direction: column;
     align-items: space-around;
+    color: var(--subtitle-color);
 }
-.text .h3 {
-    font-size: 15px;
-    font-weight: 600;
+.card .h3 {
+    font-size: medium;
+    font-weight: 300;
     color: var(--black-color);
 }
-.text .p {
+.info-card{
+    margin: .5em;
+}
+.info-card .summary-proyect {
     color: var(--subtitle-color);
-    font-size: 13px;
+    font-size: smaller;
+    
 }
-ol.tags-proyect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
-ol.tags-proyect {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
+
 ol.tags-proyect li:hover{
     box-shadow: #E884A8 0px 0px 0px 3px;
 }
@@ -246,24 +246,15 @@ ol.tags-proyect li:hover{
 
 /* termina card ejemplo */
 
-/* section contact */
-input[type=text],
-select,
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid --emphasis-color;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+/*section skills*/
+section#skills {
+    background-color: var(--background-section);
 }
-input[type=submit] {
-    background-color:var(--primary-color);
-    padding: 12px 20px;
-    border: none;
-    cursor: pointer;
+.container-skills-icons {
+    font-size: 75px;
+    color: var(--soft-emphasis-color)
 }
-
-input[type=submit]:hover {
-    background-color: var(--secondary-color);
+footer{
+    text-align: center;
+    background-color: var(--soft-emphasis-color);
 }
