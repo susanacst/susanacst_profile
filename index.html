@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Curriculum vitae de Susana CST, Frontend Web Developer.">
     <title>Susana Cst</title>
     <link rel="stylesheet" href="./style.css">
+    <!-- <script src="/js/app.js"></script> -->
     <script src="https://kit.fontawesome.com/a3a735b303.js" crossorigin="anonymous"></script>
+    <!-- mailjs -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        emailjs.init('dRb5PAU9ZqwF4rSX3')
+    </script>
+
 </head>
+
 <body>
     <!-- menu -->
     <nav>
-        <a href="#start"><h3>{{Susanacst}}</h3></a>
+        <a href="#start">
+            <h3>{{Susanacst}}</h3>
+        </a>
         <ul>
             <a href="#about">About</a>
             <a href="#proyects">Proyects</a>
@@ -19,26 +30,29 @@
         </ul>
     </nav>
     <section id="start">
-       <div class="container">
-       </div>
-        
-        
-       
-    </div>
+        <div class="container">
+        </div>
+
+
+
+        </div>
 
     </section>
     <section id="about">
         <div class="welcome-paragraph">
             <h3>Hey World, I'm Susan!</h3>
-                <div class="profile-img">
-                    <picture>
-                        <img src="/src/img/img-profile.jpg" alt="My profile photo, cat's version.">
-                    </picture>
-                </div>
-                <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+            <div class="profile-img">
+                <picture>
+                    <img src="/src/img/img-profile.jpg" alt="My profile photo, cat's version.">
+                </picture>
+            </div>
+            <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
         </div>
         <div class="contact-icons">
             <a href="https://github.com/susanacst"><i class="fa-brands fa-github"></i></a>
@@ -46,25 +60,27 @@
             <a href="mailto:susanasct098@gmail.com"><i class="fa-regular fa-envelope"></i></a>
         </div>
         <div class="main-container-buttons">
-            <a href="https://drive.google.com/file/d/1MAjz4O-U5tKfbc4-ONoLmxiL7W2wZjQG/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+            <a href="https://drive.google.com/file/d/1ctEnTHd2vMLtmflZZzWoJbIL6Vsd_woN/view?usp=sharing" target="_blank"
+                rel="noopener noreferrer">
                 <button class="primary-button">
                     <i class="fa-regular fa-star"></i>
                     download cv
                     <i class="fa-regular fa-star"></i>
                 </button>
             </a>
-             
+
         </div>
-        
+
     </section>
     <section id="proyects">
         <h2>Proyects</h2>
         <div class="card-proyect-container">
             <div class="card">
                 <div class="img">
-                    <img src="/src/img/captura-ejemplo.jpg" alt="Captura del proyecto ilustrado con un chile morrón feliz">
+                    <img src="/src/img/captura-ejemplo.jpg"
+                        alt="Captura del proyecto ilustrado con un chile morrón feliz">
                 </div>
-            
+
                 <div class="text">
                     <p class="h3">Proyect title </p>
                     <div class="info-card">
@@ -81,14 +97,14 @@
                             <a href="https://proyecto-ejemplo.com"><i class="fa-solid fa-globe"></i></a>
                         </div>
                     </div>
-            
-            
+
+
                 </div>
             </div>
-            
+
         </div>
-                
-                
+
+
     </section>
     <section id="skills">
         <h2>Skills</h2>
@@ -104,7 +120,7 @@
     </section>
     <section id="contact">
         <h2>Get in touch!</h2>
-        <div class="container-skills-icons">
+        <!-- <div class="container-skills-icons">
             <a href="">
                 <i class="fa-regular fa-envelope"></i>
             </a>
@@ -114,10 +130,55 @@
             <a href="">
                 
             </a>
-        </div>
+        </div> -->
+
+        <form id="form">
+            <div class="field">
+                <label for="title">title</label>
+                <input type="text" name="title" id="title">
+            </div>
+            <div class="field">
+                <label for="name">name</label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="field">
+                <label for="email">email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div class="field">
+                <label for="message">message</label>
+                <input type="text" name="message" id="message">
+            </div>
+
+            <input type="submit" id="button" value="Send Email">
+        </form>
+
     </section>
     <footer>
         <p>Made with <i class='fa-regular fa-heart'></i> by Susana Salazar, 2025.</p>
     </footer>
+    <script>
+        const btn = document.getElementById('button');
+
+        document.getElementById('form')
+            .addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                btn.value = 'Sending...';
+
+                const serviceID = 'default_service';
+                const templateID = 'template_ns6qwnb';
+
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                        btn.value = 'Send Email';
+                        alert('Sent!');
+                    }, (err) => {
+                        btn.value = 'Send Email';
+                        alert(JSON.stringify(err));
+                    });
+            });
+    </script>
 </body>
+
 </html>
