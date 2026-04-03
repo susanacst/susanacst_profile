@@ -1,9 +1,10 @@
 <script setup>
+import img1 from '../assets/captura-ejemplo.jpg'
 const projects = [
   {
     title: "Project title",
     description: "Lorem ipsum dolor sit amet...",
-    image: "src/assets/captura-ejemplo.jpg",
+    image: img1,
     github: "https://github.com/susanacst",
     demo: "https://proyecto-ejemplo.com"
   }
